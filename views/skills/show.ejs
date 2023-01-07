@@ -9,6 +9,7 @@
   <body>
     <h1>Skill</h1>
     <h2>Skill #<%= skill._id %></h2>
+    <a href="/skills/<%= skill._id %>/edit"> Edit Skills</a>
     <h3><%= skill.text %></h3>
     <p>Master: <%= skill.done ? 'yes' : 'Not yet...' %></p>
     <a href="/skills">Go back</a>

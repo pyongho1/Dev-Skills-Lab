@@ -55,4 +55,8 @@ function deleteSkills(req, res) {
     });
 }
 
-export { index, newSkill as new, create, show, deleteSkills as delete };
+function edit(req, res) {
+  //
+}
+
+export { index, newSkill as new, create, show, deleteSkills as delete, edit };
