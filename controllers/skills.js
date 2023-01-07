@@ -44,4 +44,15 @@ function show(req, res) {
     });
 }
 
-export { index, newSkill as new, create, show };
+function deleteSkills(req, res) {
+  Skill.findByIdAndDelete(req.params.id)
+    .then((skill) => {
+      res.redirect("/skills");
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/skills");
+    });
+}
+
+export { index, newSkill as new, create, show, deleteSkills as delete };
