@@ -17,4 +17,6 @@ router.post("/", skillsCtrl.create);
 
 router.delete("/:id", skillsCtrl.delete);
 
+router.put("/:id", skillsCtrl.update);
+
 export { router };

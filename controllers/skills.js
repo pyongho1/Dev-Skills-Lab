@@ -70,4 +70,27 @@ function edit(req, res) {
     });
 }
 
-export { index, newSkill as new, create, show, deleteSkills as delete, edit };
+function update(req, res) {
+  // handle the checkbox logic
+  req.body.done = !!req.body.done;
+  // find the skill by id and update
+  Skill.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    .then((skill) => {
+      // redirect back to show view
+      res.redirect(`/skills/${skill._id}`);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/skills");
+    });
+}
+
+export {
+  index,
+  newSkill as new,
+  create,
+  show,
+  deleteSkills as delete,
+  edit,
+  update,
+};
