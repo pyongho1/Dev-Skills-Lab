@@ -56,7 +56,18 @@ function deleteSkills(req, res) {
 }
 
 function edit(req, res) {
-  //
+  // find the todo by it's id
+  // render a view, passing in out skill
+  Skill.findById(req.params.id)
+    .then((skill) => {
+      res.render("skills/edit", {
+        skill,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/skills");
+    });
 }
 
 export { index, newSkill as new, create, show, deleteSkills as delete, edit };

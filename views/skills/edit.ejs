@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Skill</title>
+  </head>
+  <body>
+    <h1>Edit Skill</h1>
+    <form
+      action="/skills/<%= skill._id %>?_method=PUT"
+      method="POST"
+      autocomplete="off"
+    >
+      <input value= "<%= skill.text %>"" type="text" name="text" /> <input <%=
+      skill.done ? 'checked' : '' %> type="checkbox" name="done" />
+      <button type="submit">Update Skill</button>
+    </form>
+  </body>
+</html>
