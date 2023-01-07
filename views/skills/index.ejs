@@ -7,14 +7,15 @@
     <title>Skills</title>
   </head>
   <body>
-    <h1>Todos</h1>
+    <h1>Skill Lists</h1>
     <ul>
       <% skills.forEach(skill => { %>
       <li>
-        <%= skill.language %> - <%= skill.level %> - <%= skill.master ? 'True' :
-        'False' %>
+        <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
+        - <%= skill.done ? 'True' : 'False' %>
       </li>
       <% }) %>
     </ul>
+    <a href="/skills/new">Add Skills</a>
   </body>
 </html>
